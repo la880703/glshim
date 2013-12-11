@@ -9,6 +9,7 @@ EX(glBufferSubData);
 EX(glClear);
 EX(glClearColor);
 EX(glClearColorx);
+EX(glClearIndexf);
 EX(glClearDepthf);
 EX(glClearDepthx);
 EX(glClearStencil);

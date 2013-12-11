@@ -138,6 +138,7 @@ void *glXGetProcAddressARB(const char *name) {
     EX(glBlendFuncSeparatei);
     EX(glCallList);
     EX(glCallLists);
+	EX(glClearIndex);
     EX(glClearDepth);
     EX(glClientActiveTextureARB);
     EX(glClipPlane);

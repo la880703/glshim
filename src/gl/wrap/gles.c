@@ -553,7 +553,7 @@ void glClearColorx(GLclampx red, GLclampx green, GLclampx blue, GLclampx alpha) 
 }
 #endif
 #ifndef skip_glClearIndexf
-void glClearIndex(GLfloat c) {
+void glClearIndexf(GLfloat c) {
 	LOAD_GLES(glClearIndexf);
 #ifndef direct_glClearIndexf
 	PUSH_IF_COMPILING(glClearIndexf)

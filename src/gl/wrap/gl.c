@@ -38,6 +38,9 @@ void glGetObjectParameterivARB(GLuint shader, GLenum pname, GLint *params) {
 void glActiveTextureARB(GLenum texture) {
     glActiveTexture(texture);
 }
+void glClearIndex(GLfloat c) {
+	glClearIndexf(c);
+}
 void glClearDepth(GLdouble depth) {
     glClearDepthf(depth);
 }

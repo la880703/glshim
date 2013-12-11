@@ -552,6 +552,15 @@ void glClearColorx(GLclampx red, GLclampx green, GLclampx blue, GLclampx alpha) 
     gles_glClearColorx(red, green, blue, alpha);
 }
 #endif
+#ifndef skip_glClearIndexf
+void glClearIndex(GLfloat c) {
+	LOAD_GLES(glClearIndexf);
+#ifndef direct_glClearIndexf
+	PUSH_IF_COMPILING(glClearIndexf)
+#endif
+	gles_glClearIndexf(c);
+}
+#indif
 #ifndef skip_glClearDepthf
 void glClearDepthf(GLclampf depth) {
     LOAD_GLES(glClearDepthf);

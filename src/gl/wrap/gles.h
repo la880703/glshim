@@ -2232,6 +2232,13 @@ void glIndexedCall(const indexed_call_t *packed, void *ret_v);
 #define glViewport_PACKED PACKED_void_GLint_GLint_GLsizei_GLsizei
 #define glViewport_INDEXED INDEXED_void_GLint_GLint_GLsizei_GLsizei
 #define glViewport_FORMAT FORMAT_void_GLint_GLint_GLsizei_GLsizei
+#define glClearIndexf_INDEX 146
+#define glClearIndexf_RETURN void
+#define glClearIndexf_ARG_NAMES c
+#define glClearIndexf_EXPAND GLfloat c
+#define glClearIndexf_PACKED PACKED_void_GLfloat
+#define glClearIndexf_INDEXED INDEXED_void_GLfloat
+#define glClearIndexf_FORMAT FORMAT_void_GLfloat
 
 void glActiveTexture(glActiveTexture_ARG_EXPAND);
 typedef void (*glActiveTexture_PTR)(glActiveTexture_ARG_EXPAND);
@@ -2255,6 +2262,8 @@ void glClearColor(glClearColor_ARG_EXPAND);
 typedef void (*glClearColor_PTR)(glClearColor_ARG_EXPAND);
 void glClearColorx(glClearColorx_ARG_EXPAND);
 typedef void (*glClearColorx_PTR)(glClearColorx_ARG_EXPAND);
+void glClearIndexf(glClearIndexf_ATG_EXPEND);
+typedef void (*glClearIndexf_PTR)(glClearIndexf_ARG_EXPEND);
 void glClearDepthf(glClearDepthf_ARG_EXPAND);
 typedef void (*glClearDepthf_PTR)(glClearDepthf_ARG_EXPAND);
 void glClearDepthx(glClearDepthx_ARG_EXPAND);
@@ -2639,6 +2648,15 @@ typedef void (*glViewport_PTR)(glViewport_ARG_EXPAND);
     packed_data->args.a2 = (GLclampx)green; \
     packed_data->args.a3 = (GLclampx)blue; \
     packed_data->args.a4 = (GLclampx)alpha; \
+    glPushCall((void *)packed_data); \
+}
+#endif
+#ifndef direct_glClearIndexf
+#define push_glClearIndexf(c) { \
+    glClearIndexf_PACKED *packed_data = malloc(sizeof(glClearIndexf_PACKED)); \
+    packed_data->format = glClearIndexf_FORMAT; \
+    packed_data->func = glClearIndexf; \
+    packed_data->args.a1 = (GLfloat)c; \
     glPushCall((void *)packed_data); \
 }
 #endif

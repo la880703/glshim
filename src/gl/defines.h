@@ -8,6 +8,7 @@ void glArrayElement(GLint i);
 void glBegin(GLenum mode);
 void glCallList(GLuint list);
 void glCallLists(GLsizei n, GLenum type, const GLvoid *lists);
+void glClearIndex(GLfloat c);
 void glClearDepth(GLdouble depth);
 void glDeleteList(GLuint list);
 void glDeleteLists(GLuint list, GLsizei range);

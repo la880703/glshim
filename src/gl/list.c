@@ -366,6 +366,7 @@ void rlPushCall(renderlist_t *list, packed_call_t *data) {
         cl->cap += DEFAULT_CALL_LIST_CAPACITY;
         cl->calls = realloc(cl->calls, cl->cap * sizeof(uintptr_t));
     }
+	if (data == NULL) return;
     cl->calls[cl->len++] = data;
 }
 

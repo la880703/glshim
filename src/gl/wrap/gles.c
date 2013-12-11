@@ -560,7 +560,7 @@ void glClearIndex(GLfloat c) {
 #endif
 	gles_glClearIndexf(c);
 }
-#indif
+#endif
 #ifndef skip_glClearDepthf
 void glClearDepthf(GLclampf depth) {
     LOAD_GLES(glClearDepthf);

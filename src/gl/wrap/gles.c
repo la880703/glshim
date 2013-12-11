@@ -573,9 +573,11 @@ void glClearDepthx(GLclampx depth) {
 #ifndef skip_glClearIndexf
 void glClearIndexf(GLfloat c) {
 	LOAD_GLES(glClearIndexf);
+	if (gles_glClearIndexf == NULL) return;
 #ifndef direct_glClearIndexf
 	PUSH_IF_COMPILING(glClearIndexf)
 #endif
+	if (gles_glClearIndexf == NULL) return;
 	gles_glClearIndexf(c);
 }
 #endif

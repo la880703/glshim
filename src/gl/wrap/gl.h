@@ -14,6 +14,7 @@ void glShaderSourceARB(GLuint shader, GLsizei count, const GLchar **string, cons
 
 void glActiveTextureARB(GLenum texture);
 void glClearDepth(GLdouble depth);
+void glClearIndex(GLfloat c);
 void glClientActiveTextureARB(GLenum texture);
 void glClipPlane(GLenum plane, const GLdouble *equation);
 void glDepthRange(GLdouble nearVal, GLdouble farVal);

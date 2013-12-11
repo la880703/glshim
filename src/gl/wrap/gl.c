@@ -40,7 +40,7 @@ void glActiveTextureARB(GLenum texture) {
 }
 void glClearIndex(GLfloat c) {
 #if defined(BCMHOST)
-	abort ();
+	return;
 #else
 	glClearIndexf(c);
 #endif

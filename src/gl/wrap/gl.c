@@ -39,7 +39,11 @@ void glActiveTextureARB(GLenum texture) {
     glActiveTexture(texture);
 }
 void glClearIndex(GLfloat c) {
+#if defined(BCMHOST)
+	abort ();
+#else
 	glClearIndexf(c);
+#endif
 }
 void glClearDepth(GLdouble depth) {
     glClearDepthf(depth);

@@ -552,15 +552,6 @@ void glClearColorx(GLclampx red, GLclampx green, GLclampx blue, GLclampx alpha) 
     gles_glClearColorx(red, green, blue, alpha);
 }
 #endif
-#ifndef skip_glClearIndexf
-void glClearIndexf(GLfloat c) {
-	LOAD_GLES(glClearIndexf);
-#ifndef direct_glClearIndexf
-	PUSH_IF_COMPILING(glClearIndexf)
-#endif
-	gles_glClearIndexf(c);
-}
-#endif
 #ifndef skip_glClearDepthf
 void glClearDepthf(GLclampf depth) {
     LOAD_GLES(glClearDepthf);
@@ -577,6 +568,15 @@ void glClearDepthx(GLclampx depth) {
     PUSH_IF_COMPILING(glClearDepthx)
 #endif
     gles_glClearDepthx(depth);
+}
+#endif
+#ifndef skip_glClearIndexf
+void glClearIndexf(GLfloat c) {
+	LOAD_GLES(glClearIndexf);
+#ifndef direct_glClearIndexf
+	PUSH_IF_COMPILING(glClearIndexf)
+#endif
+	gles_glClearIndexf(c);
 }
 #endif
 #ifndef skip_glClearStencil

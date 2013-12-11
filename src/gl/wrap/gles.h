@@ -861,7 +861,7 @@ typedef struct {
     int func;
     ARGS_void_GLenum_GLenum_const_GLfixed___GENPT__ args;
 } INDEXED_void_GLenum_GLenum_const_GLfixed___GENPT__;
-typedef void (*FUNC_void_GLfloat)(GLfloat width);
+typedef void (*FUNC_void_GLfloat)(GLfloat);
 typedef struct {
     GLfloat a1;
 } ARGS_void_GLfloat;

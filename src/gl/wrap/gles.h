@@ -28,6 +28,7 @@ enum FORMAT {
     FORMAT_void_GLclampx_GLclampx_GLclampx_GLclampx,
     FORMAT_void_GLclampf,
     FORMAT_void_GLclampx,
+    FORMAT_void_GLfloat,
     FORMAT_void_GLint,
     FORMAT_void_GLenum_const_GLfloat___GENPT__,
     FORMAT_void_GLenum_const_GLfixed___GENPT__,
@@ -68,7 +69,6 @@ enum FORMAT {
     FORMAT_void_GLenum_GLenum_const_GLfloat___GENPT__,
     FORMAT_void_GLenum_GLenum_GLfixed,
     FORMAT_void_GLenum_GLenum_const_GLfixed___GENPT__,
-    FORMAT_void_GLfloat,
     FORMAT_void_GLfixed,
     FORMAT_void_const_GLfloat___GENPT__,
     FORMAT_void_const_GLfixed___GENPT__,
@@ -265,6 +265,19 @@ typedef struct {
     int func;
     ARGS_void_GLclampx args;
 } INDEXED_void_GLclampx;
+typedef void (*FUNC_void_GLfloat)(GLfloat c);
+typedef struct {
+    GLfloat a1;
+} ARGS_void_GLfloat;
+typedef struct {
+    int format;
+    FUNC_void_GLfloat func;
+    ARGS_void_GLfloat args;
+} PACKED_void_GLfloat;
+typedef struct {
+    int func;
+    ARGS_void_GLfloat args;
+} INDEXED_void_GLfloat;
 typedef void (*FUNC_void_GLint)(GLint s);
 typedef struct {
     GLint a1;
@@ -861,19 +874,6 @@ typedef struct {
     int func;
     ARGS_void_GLenum_GLenum_const_GLfixed___GENPT__ args;
 } INDEXED_void_GLenum_GLenum_const_GLfixed___GENPT__;
-typedef void (*FUNC_void_GLfloat)(GLfloat);
-typedef struct {
-    GLfloat a1;
-} ARGS_void_GLfloat;
-typedef struct {
-    int format;
-    FUNC_void_GLfloat func;
-    ARGS_void_GLfloat args;
-} PACKED_void_GLfloat;
-typedef struct {
-    int func;
-    ARGS_void_GLfloat args;
-} INDEXED_void_GLfloat;
 typedef void (*FUNC_void_GLfixed)(GLfixed width);
 typedef struct {
     GLfixed a1;
@@ -2239,7 +2239,6 @@ void glIndexedCall(const indexed_call_t *packed, void *ret_v);
 #define glViewport_PACKED PACKED_void_GLint_GLint_GLsizei_GLsizei
 #define glViewport_INDEXED INDEXED_void_GLint_GLint_GLsizei_GLsizei
 #define glViewport_FORMAT FORMAT_void_GLint_GLint_GLsizei_GLsizei
-
 
 void glActiveTexture(glActiveTexture_ARG_EXPAND);
 typedef void (*glActiveTexture_PTR)(glActiveTexture_ARG_EXPAND);

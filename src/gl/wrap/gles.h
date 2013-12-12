@@ -1308,13 +1308,13 @@ void glIndexedCall(const indexed_call_t *packed, void *ret_v);
 #define glClearDepthx_PACKED PACKED_void_GLclampx
 #define glClearDepthx_INDEXED INDEXED_void_GLclampx
 #define glClearDepthx_FORMAT FORMAT_void_GLclampx
-#define glClearIndexf_INDEX 14
-#define glClearIndexf_RETURN void
-#define glClearIndexf_ARG_NAMES c
-#define glClearIndexf_ARG_EXPAND GLfloat c
-#define glClearIndexf_PACKED PACKED_void_GLfloat
-#define glClearIndexf_INDEXED INDEXED_void_GLfloat
-#define glClearIndexf_FORMAT FORMAT_void_GLfloat
+#define glClearIndex_INDEX 14
+#define glClearIndex_RETURN void
+#define glClearIndex_ARG_NAMES c
+#define glClearIndex_ARG_EXPAND GLfloat c
+#define glClearIndex_PACKED PACKED_void_GLfloat
+#define glClearIndex_INDEXED INDEXED_void_GLfloat
+#define glClearIndex_FORMAT FORMAT_void_GLfloat
 #define glClearStencil_INDEX 15
 #define glClearStencil_RETURN void
 #define glClearStencil_ARG_NAMES s
@@ -2266,8 +2266,8 @@ void glClearDepthf(glClearDepthf_ARG_EXPAND);
 typedef void (*glClearDepthf_PTR)(glClearDepthf_ARG_EXPAND);
 void glClearDepthx(glClearDepthx_ARG_EXPAND);
 typedef void (*glClearDepthx_PTR)(glClearDepthx_ARG_EXPAND);
-void glClearIndexf(glClearIndexf_ARG_EXPAND);
-typedef void (*glClearIndexf_PTR)(glClearIndexf_ARG_EXPAND);
+void glClearIndex(glClearIndex_ARG_EXPAND);
+typedef void (*glClearIndex_PTR)(glClearIndex_ARG_EXPAND);
 void glClearStencil(glClearStencil_ARG_EXPAND);
 typedef void (*glClearStencil_PTR)(glClearStencil_ARG_EXPAND);
 void glClientActiveTexture(glClientActiveTexture_ARG_EXPAND);
@@ -2669,11 +2669,11 @@ typedef void (*glViewport_PTR)(glViewport_ARG_EXPAND);
     glPushCall((void *)packed_data); \
 }
 #endif
-#ifndef direct_glClearIndexf
-#define push_glClearIndexf(c) { \
-    glClearIndexf_PACKED *packed_data = malloc(sizeof(glClearIndexf_PACKED)); \
-    packed_data->format = glClearIndexf_FORMAT; \
-    packed_data->func = glClearIndexf; \
+#ifndef direct_glClearIndex
+#define push_glClearIndex(c) { \
+    glClearIndex_PACKED *packed_data = malloc(sizeof(glClearIndex_PACKED)); \
+    packed_data->format = glClearIndex_FORMAT; \
+    packed_data->func = glClearIndex; \
     packed_data->args.a1 = (GLfloat)c; \
     glPushCall((void *)packed_data); \
 }

@@ -11,7 +11,7 @@ EX(glClearColor);
 EX(glClearColorx);
 EX(glClearDepthf);
 EX(glClearDepthx);
-EX(glClearIndexf);
+EX(glClearIndex);
 EX(glClearStencil);
 EX(glClientActiveTexture);
 EX(glClipPlanef);

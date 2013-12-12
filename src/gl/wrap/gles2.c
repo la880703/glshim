@@ -674,13 +674,13 @@ void glClearDepthf(GLclampf depth) {
     gles_glClearDepthf(depth);
 }
 #endif
-#ifndef skip_glClearIndexf
-void glClearIndexf(GLfloat c) {
-    LOAD_GLES(glClearIndexf);
-#ifndef direct_glClearIndexf
-    PUSH_IF_COMPILING(glClearIndexf)
+#ifndef skip_glClearIndex
+void glClearIndex(GLfloat c) {
+    LOAD_GLES(glClearIndex);
+#ifndef direct_glClearIndex
+    PUSH_IF_COMPILING(glClearIndex)
 #endif
-    gles_glClearIndexf(c);
+    gles_glClearIndex(c);
 }
 #endif
 #ifndef skip_glClearStencil

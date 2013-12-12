@@ -21,8 +21,8 @@ set_target_properties(GL2 PROPERTIES COMPILE_FLAGS -DUSE_ES2)
 
 if(BCMHOST)
     set(PI_LIBS bcm_host vcos pthread)
-    target_link_libraries(GL ${PI_LIBS} GLESv1_CM)
-    target_link_libraries(GL2 ${PI_LIBS} GLESv2)
+	target_link_libraries(GL ${PI_LIBS} GLESv1_CM EGL)
+	target_link_libraries(GL2 ${PI_LIBS} GLESv2 EGL)
 endif()
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")

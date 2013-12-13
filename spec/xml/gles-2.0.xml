@@ -594,9 +594,6 @@
     <function name="glClearDepthf">
         <param name="depth" type="GLclampf"/>
     </function>
-    <function name="glClearIndexf">
-        <param name="c" type="GLflout"/>
-    </function>
     <function name="glClearStencil">
         <param name="s" type="GLint"/>
     </function>

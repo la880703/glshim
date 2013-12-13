@@ -75,12 +75,6 @@ void glPackedCall(const packed_call_t *packed) {
             unpacked->func(args.a1);
             break;
         }
-        case FORMAT_void_GLfloat: {
-            PACKED_void_GLfloat *unpacked = (PACKED_void_GLfloat *)packed;
-            ARGS_void_GLfloat args = unpacked->args;
-            unpacked->func(args.a1);
-            break;
-        }
         case FORMAT_void_GLint: {
             PACKED_void_GLint *unpacked = (PACKED_void_GLint *)packed;
             ARGS_void_GLint args = unpacked->args;
@@ -317,6 +311,12 @@ void glPackedCall(const packed_call_t *packed) {
             PACKED_void_GLenum_GLenum_const_GLfixed___GENPT__ *unpacked = (PACKED_void_GLenum_GLenum_const_GLfixed___GENPT__ *)packed;
             ARGS_void_GLenum_GLenum_const_GLfixed___GENPT__ args = unpacked->args;
             unpacked->func(args.a1, args.a2, args.a3);
+            break;
+        }
+        case FORMAT_void_GLfloat: {
+            PACKED_void_GLfloat *unpacked = (PACKED_void_GLfloat *)packed;
+            ARGS_void_GLfloat args = unpacked->args;
+            unpacked->func(args.a1);
             break;
         }
         case FORMAT_void_GLfixed: {
@@ -568,15 +568,6 @@ void glClearDepthx(GLclampx depth) {
     PUSH_IF_COMPILING(glClearDepthx)
 #endif
     gles_glClearDepthx(depth);
-}
-#endif
-#ifndef skip_glClearIndex
-void glClearIndex(GLfloat c) {
-    LOAD_GLES(glClearIndex);
-#ifndef direct_glClearIndex
-    PUSH_IF_COMPILING(glClearIndex)
-#endif
-    gles_glClearIndex(c);
 }
 #endif
 #ifndef skip_glClearStencil

@@ -75,6 +75,12 @@ void glPackedCall(const packed_call_t *packed) {
             unpacked->func(args.a1);
             break;
         }
+        case FORMAT_void_GLfloat: {
+            PACKED_void_GLfloat *unpacked = (PACKED_void_GLfloat *)packed;
+            ARGS_void_GLfloat args = unpacked->args;
+            unpacked->func(args.a1);
+            break;
+        }
         case FORMAT_void_GLint: {
             PACKED_void_GLint *unpacked = (PACKED_void_GLint *)packed;
             ARGS_void_GLint args = unpacked->args;
@@ -297,12 +303,6 @@ void glPackedCall(const packed_call_t *packed) {
         case FORMAT_GLboolean_GLenum: {
             PACKED_GLboolean_GLenum *unpacked = (PACKED_GLboolean_GLenum *)packed;
             ARGS_GLboolean_GLenum args = unpacked->args;
-            unpacked->func(args.a1);
-            break;
-        }
-        case FORMAT_void_GLfloat: {
-            PACKED_void_GLfloat *unpacked = (PACKED_void_GLfloat *)packed;
-            ARGS_void_GLfloat args = unpacked->args;
             unpacked->func(args.a1);
             break;
         }
@@ -672,6 +672,15 @@ void glClearDepthf(GLclampf depth) {
     PUSH_IF_COMPILING(glClearDepthf)
 #endif
     gles_glClearDepthf(depth);
+}
+#endif
+#ifndef skip_glClearIndex
+void glClearIndex(GLfloat c) {
+    LOAD_GLES(glClearIndex);
+#ifndef direct_glClearIndex
+    PUSH_IF_COMPILING(glClearIndex)
+#endif
+    gles_glClearIndex(c);
 }
 #endif
 #ifndef skip_glClearStencil

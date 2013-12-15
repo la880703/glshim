@@ -16,6 +16,7 @@ EX(glCheckFramebufferStatus);
 EX(glClear);
 EX(glClearColor);
 EX(glClearDepthf);
+EX(glClearIndex);
 EX(glClearStencil);
 EX(glColorMask);
 EX(glCompileShader);

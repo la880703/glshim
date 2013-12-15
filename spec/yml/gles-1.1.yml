@@ -11,6 +11,7 @@ glClearColor: [void, GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha
 glClearColorx: [void, GLclampx red, GLclampx green, GLclampx blue, GLclampx alpha]
 glClearDepthf: [void, GLclampf depth]
 glClearDepthx: [void, GLclampx depth]
+glClearIndex: [void, GLfloat c]
 glClearStencil: [void, GLint s]
 glClientActiveTexture: [void, GLenum texture]
 glClipPlanef: [void, GLenum plane, "const GLfloat *equation"]
